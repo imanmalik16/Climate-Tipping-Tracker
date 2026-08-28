@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate Tipping Point Tracker</title>
+<meta name="description" content="Live tracker of how close Earth's major climate systems are to irreversible tipping points, built on NASA and NOAA data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14181c;
+    --panel: #1b2026;
+    --panel-border: #2a3038;
+    --text: #e9e7e1;
+    --text-dim: #8b939b;
+    --mono: 'IBM Plex Mono', monospace;
+    --display: 'Space Grotesk', sans-serif;
+    --body: 'Inter', sans-serif;
+    --c-low: #4a9d6f;
+    --c-mod: #d9a83d;
+    --c-high: #e2672a;
+    --c-crit: #d43d3d;
+    --c-crossed: #8f1d1d;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header.top {
+    border-bottom: 1px solid var(--panel-border);
+    padding: 28px 0 22px;
+  }
+  header.top .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  header.top .dot { color: var(--c-mod); }
+  header.top h1 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(28px, 4.5vw, 40px);
+    margin: 10px 0 6px;
+    letter-spacing: -0.01em;
+  }
+  header.top p.sub {
+    color: var(--text-dim);
+    max-width: 640px;
+    margin: 0;
+    font-size: 15px;
+  }
+
+  /* Hero readout */
+  .hero {
+    padding: 34px 0 10px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--panel-border);
+    border: 1px solid var(--panel-border);
+  }
+  .stat {
+    background: var(--panel);
+    padding: 20px 18px;
+  }
+  .stat .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+  .stat .value {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: clamp(24px, 4vw, 34px);
+    line-height: 1;
+  }
+  .stat.primary .value { color: var(--c-high); }
+  .stat .unit { font-size: 15px; color: var(--text-dim); font-weight: 400; margin-left: 4px; }
+  .stat .note { font-size: 12.5px; color: var(--text-dim); margin-top: 8px; }
+
+  @media (max-width: 720px) {
+    .hero-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  section { padding: 44px 0; border-bottom: 1px solid var(--panel-border); }
+  section:last-of-type { border-bottom: none; }
+  section h2 {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  section p.lede {
+    color: var(--text-dim);
+    font-size: 14.5px;
+    max-width: 680px;
+    margin: 0 0 26px;
+  }
+
+  /* chart */
+  #chart-wrap { position: relative; }
+  #chart-svg { width: 100%; height: auto; display: block; }
+  .chart-legend {
+    display: flex;
+    gap: 20px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+  /* proximity bars */
+  .prox-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 56px;
+    align-items: center;
+    gap: 14px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--panel-border);
+  }
+  .prox-row:last-child { border-bottom: none; }
+  .prox-name {
+    font-size: 13.5px;
+    font-weight: 500;
+  }
+  .prox-name .cat {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 1px;
+  }
+  .prox-track {
+    position: relative;
+    height: 8px;
+    background: #22282f;
+    border-radius: 4px;
+    overflow: visible;
+  }
+  .prox-fill {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    border-radius: 4px;
+  }
+  .prox-range {
+    position: absolute;
+    top: -3px;
+    height: 14px;
+    border-left: 1px solid rgba(255,255,255,0.35);
+    border-right: 1px solid rgba(255,255,255,0.35);
+  }
+  .prox-score {
+    font-family: var(--mono);
+    font-size: 13px;
+    text-align: right;
+    color: var(--text-dim);
+  }
+  .prox-row:hover .prox-score { color: var(--text); }
+  .prox-row[title] { cursor: default; }
+
+  /* MC table */
+  table.mc {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  table.mc th {
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dim);
+    font-weight: 500;
+    padding: 0 10px 10px;
+    border-bottom: 1px solid var(--panel-border);
+  }
+  table.mc th.num, table.mc td.num { text-align: right; }
+  table.mc td {
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--panel-border);
+  }
+  table.mc tr:last-child td { border-bottom: none; }
+  table.mc td.num { font-family: var(--mono); }
+
+  .findings ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .findings li {
+    margin-bottom: 12px;
+    font-size: 14.5px;
+    color: var(--text-dim);
+  }
+  .findings li b { color: var(--text); font-weight: 500; }
+  .findings li:last-child { margin-bottom: 0; }
+
+  footer {
+    padding: 30px 0 50px;
+    font-size: 12.5px;
+    color: var(--text-dim);
+  }
+  footer a { text-decoration: underline; text-underline-offset: 2px; }
+  footer .sources { margin-top: 8px; }
+
+  .loading, .error {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    padding: 40px 0;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span><span class="dot">&#9679;</span> Climate Tipping Point Tracker</span>
+      <span id="updated-tag">loading data&hellip;</span>
+    </div>
+    <h1>How close are we?</h1>
+    <p class="sub">Tracks Earth's major climate systems against the warming thresholds where scientists expect them to tip into a new, largely irreversible state. Data pulled from NASA GISS, NOAA, and NSIDC, refreshed weekly.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-grid" id="hero-grid">
+      <div class="loading">Loading current readings&hellip;</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <h2>Global temperature, 1880 to present</h2>
+    <p class="lede">Annual anomaly against the pre-industrial baseline (1880&ndash;1899). Thin line is the yearly value, thick line is a 10-year rolling average.</p>
+    <div id="chart-wrap"><div class="loading">Loading temperature record&hellip;</div></div>
+  </section>
+
+  <section>
+    <h2>Proximity to each tipping threshold</h2>
+    <p class="lede">Score = current warming divided by the element's threshold, from Armstrong McKay et al. (2022). 100 means the best-estimate threshold has been reached. Bracket marks show the range implied by the published uncertainty on that threshold.</p>
+    <div id="prox-list"><div class="loading">Loading proximity scores&hellip;</div></div>
+  </section>
+
+  <section>
+    <h2>Odds of crossing, by 2050 and 2100</h2>
+    <p class="lede">20,000-run Monte Carlo simulation propagating both threshold uncertainty and warming-rate uncertainty forward. Sorted by likelihood of crossing this century.</p>
+    <div id="mc-table"><div class="loading">Loading simulation results&hellip;</div></div>
+  </section>
+
+  <section class="findings">
+    <h2>Reading the numbers</h2>
+    <ol id="findings-list">
+      <li>Loading&hellip;</li>
+    </ol>
+  </section>
+
+  <footer>
+    <div>Proximity scores are a constructed index, distance in degrees, not a probability of tipping. Thresholds carry real scientific uncertainty; see the range brackets above. Full methodology, limitations, and the underlying analysis are in the source notebook.</div>
+    <div class="sources">Sources: <a href="https://data.giss.nasa.gov/gistemp/" target="_blank" rel="noopener">NASA GISS</a>, <a href="https://gml.noaa.gov/ccgg/trends/" target="_blank" rel="noopener">NOAA Mauna Loa</a>, <a href="https://ourworldindata.org/grapher/monthly-sea-ice-extent-in-the-arctic" target="_blank" rel="noopener">NSIDC via Our World in Data</a>, <a href="https://doi.org/10.1126/science.abn7950" target="_blank" rel="noopener">Armstrong McKay et al. 2022, Science</a>.</div>
+  </footer>
+
+</div>
+
+<script>
+const DATA_DIR = './data/';
+
+function urgencyColor(score, crossed) {
+  if (crossed) return 'var(--c-crossed)';
+  if (score >= 80) return 'var(--c-crit)';
+  if (score >= 60) return 'var(--c-high)';
+  if (score >= 40) return 'var(--c-mod)';
+  return 'var(--c-low)';
+}
+
+function fmtDate(iso) {
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+async function loadJSON(name) {
+  const res = await fetch(DATA_DIR + name, { cache: 'no-store' });
+  if (!res.ok) throw new Error('missing ' + name);
+  return res.json();
+}
+
+function renderHero(s) {
+  const el = document.getElementById('hero-grid');
+  el.innerHTML = `
+    <div class="stat primary">
+      <div class="label">Current warming</div>
+      <div class="value">+${s.current_temp.toFixed(2)}<span class="unit">&deg;C</span></div>
+      <div class="note">vs. pre-industrial, ${s.window_years}-yr average</div>
+    </div>
+    <div class="stat">
+      <div class="label">Warming rate</div>
+      <div class="value">${s.warming_per_decade.toFixed(2)}<span class="unit">&deg;C/decade</span></div>
+      <div class="note">&plusmn;${s.stderr_per_decade.toFixed(2)}, since 1980, R&sup2;=${s.r_squared.toFixed(2)}</div>
+    </div>
+    <div class="stat">
+      <div class="label">Atmospheric CO&#8322;</div>
+      <div class="value">${Math.round(s.current_co2)}<span class="unit">ppm</span></div>
+      <div class="note">+${s.co2_rate_per_year.toFixed(1)} ppm/yr, last decade</div>
+    </div>
+    <div class="stat">
+      <div class="label">Thresholds crossed</div>
+      <div class="value">${s.n_crossed}<span class="unit">/ ${s.n_total}</span></div>
+      <div class="note">${s.n_near} more within 0.5&deg;C</div>
+    </div>
+  `;
+}
+
+function renderChart(rows) {
+  const wrap = document.getElementById('chart-wrap');
+  const W = 900, H = 320, M = { top: 16, right: 16, bottom: 28, left: 40 };
+  const years = rows.map(r => r.year);
+  const vals = rows.map(r => r.anomaly_C);
+  const xMin = years[0], xMax = years[years.length - 1];
+  const yMin = Math.min(-0.4, ...vals), yMax = Math.max(1.6, ...vals);
+
+  const x = y => M.left + (y - xMin) / (xMax - xMin) * (W - M.left - M.right);
+  const y = v => H - M.bottom - (v - yMin) / (yMax - yMin) * (H - M.top - M.bottom);
+
+  const rawPath = rows.map((r, i) => `${i === 0 ? 'M' : 'L'}${x(r.year).toFixed(1)},${y(r.anomaly_C).toFixed(1)}`).join(' ');
+  const rollRows = rows.filter(r => r.rolling_10yr !== null && r.rolling_10yr !== undefined);
+  const rollPath = rollRows.map((r, i) => `${i === 0 ? 'M' : 'L'}${x(r.year).toFixed(1)},${y(r.rolling_10yr).toFixed(1)}`).join(' ');
+
+  const gridLines = [];
+  const step = (yMax - yMin) > 3 ? 1 : 0.5;
+  for (let v = Math.ceil(yMin / step) * step; v <= yMax; v += step) {
+    gridLines.push(`<line x1="${M.left}" x2="${W - M.right}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}" stroke="#232a32" stroke-width="1"/>
+      <text x="${M.left - 8}" y="${(y(v) + 4).toFixed(1)}" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#8b939b">${v.toFixed(1)}</text>`);
+  }
+  const xTicks = [];
+  for (let yr = Math.ceil(xMin / 20) * 20; yr <= xMax; yr += 20) {
+    xTicks.push(`<text x="${x(yr).toFixed(1)}" y="${H - 8}" text-anchor="middle" font-family="IBM Plex Mono" font-size="10" fill="#8b939b">${yr}</text>`);
+  }
+
+  const parisY = y(1.5), twoY = y(2.0);
+  const refLines = (yMax >= 1.5) ? `
+    <line x1="${M.left}" x2="${W-M.right}" y1="${parisY.toFixed(1)}" y2="${parisY.toFixed(1)}" stroke="#d9a83d" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="${W - M.right}" y="${(parisY - 5).toFixed(1)}" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#d9a83d">1.5&#176;C</text>
+    ${yMax >= 2.0 ? `<line x1="${M.left}" x2="${W-M.right}" y1="${twoY.toFixed(1)}" y2="${twoY.toFixed(1)}" stroke="#d43d3d" stroke-width="1" stroke-dasharray="3,3"/>
+    <text x="${W - M.right}" y="${(twoY - 5).toFixed(1)}" text-anchor="end" font-family="IBM Plex Mono" font-size="10" fill="#d43d3d">2.0&#176;C</text>` : ''}
+  ` : '';
+
+  wrap.innerHTML = `
+    <svg id="chart-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+      ${gridLines.join('')}
+      ${refLines}
+      <path d="${rawPath}" fill="none" stroke="#e2672a" stroke-width="1" opacity="0.35"/>
+      <path d="${rollPath}" fill="none" stroke="#e2672a" stroke-width="2.25"/>
+      ${xTicks.join('')}
+    </svg>
+    <div class="chart-legend">
+      <span><span class="swatch" style="background:#e2672a;opacity:0.35"></span>Annual value</span>
+      <span><span class="swatch" style="background:#e2672a"></span>10-year average</span>
+      <span><span class="swatch" style="background:#d9a83d"></span>1.5&deg;C Paris target</span>
+      <span><span class="swatch" style="background:#d43d3d"></span>2.0&deg;C upper limit</span>
+    </div>
+  `;
+}
+
+function renderProximity(rows) {
+  const el = document.getElementById('prox-list');
+  const sorted = [...rows].sort((a, b) => b.proximity_score - a.proximity_score);
+  el.innerHTML = sorted.map(r => {
+    const color = urgencyColor(r.proximity_score, r.crossed);
+    const lo = Math.min(r.proximity_score_low, r.proximity_score_high);
+    const hi = Math.max(r.proximity_score_low, r.proximity_score_high);
+    return `
+      <div class="prox-row" title="${r.consequence}">
+        <div class="prox-name">${r.name}<span class="cat">${r.category}</span></div>
+        <div class="prox-track">
+          <div class="prox-fill" style="width:${Math.min(r.proximity_score,100)}%; background:${color};"></div>
+          <div class="prox-range" style="left:${lo}%; width:${Math.max(hi-lo,0.5)}%;"></div>
+        </div>
+        <div class="prox-score">${r.proximity_score.toFixed(0)}%</div>
+      </div>`;
+  }).join('');
+}
+
+function renderMC(rows) {
+  const el = document.getElementById('mc-table');
+  const top = rows.filter(r => r.p_2100 > 0.01).slice(0, 10);
+  el.innerHTML = `
+    <table class="mc">
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th class="num">By 2050</th>
+          <th class="num">By 2100</th>
+          <th class="num">Median year</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${top.map(r => `
+          <tr>
+            <td>${r.name}</td>
+            <td class="num">${Math.round(r.p_2050 * 100)}%</td>
+            <td class="num">${Math.round(r.p_2100 * 100)}%</td>
+            <td class="num">${r.median_year >= 2200 ? '2200+' : r.median_year}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderFindings(s) {
+  const el = document.getElementById('findings-list');
+  el.innerHTML = `
+    <li><b>+${s.current_temp.toFixed(2)}&deg;C</b> above pre-industrial, ${s.window_years}-year average. At the current rate, +1.5&deg;C arrives around <b>${s.year_1p5}</b> and +2.0&deg;C around <b>${s.year_2p0}</b>.</li>
+    <li><b>${s.n_crossed} of ${s.n_total}</b> tipping elements are past their best-estimate threshold, ${s.n_near} more within 0.5&deg;C. The nearest cluster sits at 1.5&deg;C: Greenland, West Antarctica, coral reefs, abrupt permafrost thaw.</li>
+    <li>CO&#8322; is at <b>${Math.round(s.current_co2)} ppm</b>, rising ${s.co2_rate_per_year.toFixed(1)} ppm per year over the last decade, correlated with temperature at r=${s.co2_temp_corr.toFixed(2)}.</li>
+    <li>Arctic September sea ice is declining ${Math.abs(s.ice_rate_per_decade).toFixed(2)} million km&sup2; per decade. Extrapolating that line reaches the ice-free threshold around <b>${s.ice_free_year_extrapolated}</b>, an extrapolation rather than a model projection.</li>
+    <li>Monte Carlo: <b>${s.n_core_risk_this_century}</b> global-core elements are more likely than not to cross this century. Soonest is <b>${s.soonest_element}</b>, median year ${s.soonest_median_year}.</li>
+  `;
+}
+
+async function init() {
+  try {
+    const [summary, proximity, mc] = await Promise.all([
+      loadJSON('summary.json'),
+      loadJSON('proximity.json'),
+      loadJSON('monte_carlo.json'),
+    ]);
+    document.getElementById('updated-tag').textContent = 'Updated ' + fmtDate(summary.generated);
+    renderHero(summary);
+    renderProximity(proximity);
+    renderMC(mc);
+    renderFindings(summary);
+  } catch (e) {
+    document.querySelectorAll('.loading').forEach(n => {
+      n.textContent = 'Data not generated yet. Run scripts/update_data.py or wait for the scheduled action.';
+      n.className = 'error';
+    });
+    console.error(e);
+    return;
+  }
+
+  try {
+    const annual = await loadJSON('annual_temp.json');
+    renderChart(annual);
+  } catch (e) {
+    document.getElementById('chart-wrap').innerHTML =
+      '<div class="error">Temperature history populates after the first automated data run.</div>';
+  }
+}
+
+init();
+</script>
+
+</body>
+</html>

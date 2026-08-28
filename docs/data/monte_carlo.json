@@ -1,0 +1,146 @@
+[
+  {
+    "name":"Boreal Permafrost (abrupt thaw)",
+    "code":"PFAT",
+    "category":"Regional impact",
+    "p_already":0.008,
+    "p_2050":0.519,
+    "p_2100":1.0,
+    "median_year":2049
+  },
+  {
+    "name":"Barents Sea Ice",
+    "code":"BARI",
+    "category":"Regional impact",
+    "p_already":0.0,
+    "p_2050":0.468,
+    "p_2100":1.0,
+    "median_year":2050
+  },
+  {
+    "name":"Low-latitude Coral Reefs",
+    "code":"REEF",
+    "category":"Regional impact",
+    "p_already":0.01,
+    "p_2050":0.666,
+    "p_2100":1.0,
+    "median_year":2045
+  },
+  {
+    "name":"Greenland Ice Sheet",
+    "code":"GrIS",
+    "category":"Global core",
+    "p_already":0.048,
+    "p_2050":0.402,
+    "p_2100":0.955,
+    "median_year":2056
+  },
+  {
+    "name":"W. Antarctic Ice Sheet",
+    "code":"WAIS",
+    "category":"Global core",
+    "p_already":0.006,
+    "p_2050":0.338,
+    "p_2100":0.949,
+    "median_year":2059
+  },
+  {
+    "name":"Mountain Glaciers",
+    "code":"GLCR",
+    "category":"Regional impact",
+    "p_already":0.0,
+    "p_2050":0.013,
+    "p_2100":0.901,
+    "median_year":2076
+  },
+  {
+    "name":"Labrador Sea Convection",
+    "code":"LABC",
+    "category":"Global core",
+    "p_already":0.0,
+    "p_2050":0.132,
+    "p_2100":0.747,
+    "median_year":2077
+  },
+  {
+    "name":"Sahel & W. African Monsoon",
+    "code":"SAHL",
+    "category":"Regional impact",
+    "p_already":0.0,
+    "p_2050":0.0,
+    "p_2100":0.352,
+    "median_year":2106
+  },
+  {
+    "name":"Boreal Forest (dieback)",
+    "code":"BORF",
+    "category":"Regional impact",
+    "p_already":0.0,
+    "p_2050":0.005,
+    "p_2100":0.163,
+    "median_year":2144
+  },
+  {
+    "name":"E. Antarctic Subglacial Basins",
+    "code":"EASB",
+    "category":"Global core",
+    "p_already":0.0,
+    "p_2050":0.0,
+    "p_2100":0.106,
+    "median_year":2144
+  },
+  {
+    "name":"Boreal Forest (expansion)",
+    "code":"TUND",
+    "category":"Regional impact",
+    "p_already":0.0,
+    "p_2050":0.0,
+    "p_2100":0.091,
+    "median_year":2175
+  },
+  {
+    "name":"AMOC Collapse",
+    "code":"AMOC",
+    "category":"Global core",
+    "p_already":0.0,
+    "p_2050":0.002,
+    "p_2100":0.089,
+    "median_year":2183
+  },
+  {
+    "name":"Amazon Rainforest",
+    "code":"AMAZ",
+    "category":"Global core",
+    "p_already":0.0,
+    "p_2050":0.0,
+    "p_2100":0.072,
+    "median_year":2154
+  },
+  {
+    "name":"Boreal Permafrost",
+    "code":"PFTP",
+    "category":"Global core",
+    "p_already":0.0,
+    "p_2050":0.0,
+    "p_2100":0.0,
+    "median_year":2179
+  },
+  {
+    "name":"Arctic Winter Sea Ice",
+    "code":"AWSI",
+    "category":"Global core",
+    "p_already":0.0,
+    "p_2050":0.0,
+    "p_2100":0.0,
+    "median_year":2200
+  },
+  {
+    "name":"E. Antarctic Ice Sheet",
+    "code":"EAIS",
+    "category":"Global core",
+    "p_already":0.0,
+    "p_2050":0.0,
+    "p_2100":0.0,
+    "median_year":2200
+  }
+]

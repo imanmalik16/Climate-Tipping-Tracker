@@ -6,8 +6,7 @@ Current warming, tipping point proximity scores, and Monte Carlo crossing
 probabilities, pulled from NASA, NOAA, and NSIDC and refreshed automatically
 every week.
 
-**Live site:** `https://<your-username>.github.io/<repo-name>/` (set up in
-Deployment below)
+**Live site:** https://imanmalik16.github.io/Climate-Tipping-Tracker/
 
 ## What it shows
 
@@ -86,28 +85,6 @@ mean.
 - Armstrong McKay, D.I. et al. (2022). Exceeding 1.5C global warming could
   trigger multiple climate tipping points. *Science*, 377(6611), eabn7950.
   [doi:10.1126/science.abn7950](https://doi.org/10.1126/science.abn7950)
-
-## Deployment
-
-1. Push this repo to GitHub (or upload the files through the web UI).
-2. Settings -> Pages -> Source: **Deploy from a branch**, branch `main`,
-   folder `/docs`. Save.
-3. Actions tab -> "Update climate data" -> Run workflow, to pull real
-   numbers into `docs/data/` right away instead of waiting for Monday.
-4. Site goes live at `https://<your-username>.github.io/<repo-name>/`,
-   usually within a minute or two of the first deploy.
-
-From there it's hands-off: the workflow refreshes the data every Monday and
-commits it, and Pages redeploys on every commit to `main`.
-
-### Running it locally
-
-```
-pip install -r requirements.txt
-python scripts/update_data.py
-python -m http.server --directory docs 8000
-```
-Then open `http://localhost:8000`.
 
 ### If a scheduled run fails
 

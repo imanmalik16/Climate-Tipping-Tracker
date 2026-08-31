@@ -1,94 +1,100 @@
 # Climate Tipping Point Tracker
 
-A live dashboard tracking how close Earth's major climate systems are to the
-warming thresholds identified in Armstrong McKay et al. (2022, *Science*).
-Current warming, tipping point proximity scores, and Monte Carlo crossing
-probabilities, pulled from NASA, NOAA, and NSIDC and refreshed automatically
-every week.
+A live dashboard that tracks how close 16 major climate systems are to published global warming thresholds. It combines data from NASA, NOAA, and NSIDC with Monte Carlo simulation and temperature forecasting. Data updates automatically each week through GitHub Actions.
 
-**Live site:** https://imanmalik16.github.io/Climate-Tipping-Tracker/
+**Live dashboard:** [imanmalik16.github.io/Climate-Tipping-Tracker](https://imanmalik16.github.io/Climate-Tipping-Tracker/)
 
-## What it shows
+## Key features
 
-- Current global warming against a pre-industrial baseline, and the rate
-  it's rising at
-- Atmospheric CO2 and how it tracks with temperature
-- A proximity score for each of 16 tipping elements (Greenland ice sheet,
-  AMOC, Amazon dieback, coral reefs, and others), how far each sits from its
-  threshold in degrees
-- A 20,000-run Monte Carlo simulation giving the probability each element
-  crosses its threshold by 2050 and by 2100, accounting for uncertainty in
-  both the threshold itself and the warming rate
+* Tracks current warming relative to a pre-industrial baseline
+* Compares atmospheric CO2 levels with global temperature
+* Calculates proximity scores and remaining warming for 16 climate tipping elements
+* Estimates the probability of crossing each threshold by 2050 and 2100 using 20,000 Monte Carlo simulations
+* Backtests linear trend and ridge regression temperature forecasts
+* Refreshes the dashboard weekly with an automated data pipeline
 
-## Repository structure
+## Tools
 
-```
-notebooks/
-  1_climate_tipping.ipynb        the full analysis: data loading, EDA,
-                                  proximity scores, Monte Carlo, limitations
-  2_temperature_forecast.ipynb   backtests whether a better forecasting
-                                  model beats the linear trend notebook 1
-                                  extrapolates from (see Methodology below)
-scripts/
-  update_data.py                 re-runs the notebook 1 analysis against
-                                  live data and writes docs/data/*.json
-docs/
-  index.html                     the dashboard (static, no build step)
-  data/                          generated JSON the dashboard reads
-.github/workflows/
-  update.yml                     runs update_data.py weekly and commits
-                                  the refreshed numbers
-```
+Python, Jupyter Notebook, HTML, CSS, JavaScript, statistical modeling, Monte Carlo simulation, and GitHub Actions.
 
 ## Methodology
 
-Thresholds are from Table 1 of Armstrong McKay et al. (2022), expressed as
-global mean surface temperature above the 1850-1900 baseline. NASA's
-GISTEMP series uses a 1951-1980 baseline, so it's re-referenced to
-1880-1899 (the earliest window GISTEMP covers) before comparison.
+Tipping thresholds come from Armstrong McKay et al. (2022) and are expressed as global mean surface temperature above the 1850-1900 baseline. NASA GISTEMP uses a 1951-1980 baseline, so the temperature series is adjusted using the earliest available GISTEMP period, 1880-1899, before comparison.
 
-**Proximity score** = current warming / threshold x 100. It's a distance
-measure, not a probability, an element scoring 70 is 70% of the way there in
-degrees, not 70% likely to tip.
+### Proximity scores
 
-**Crossing probabilities** come from a Monte Carlo simulation: each
-element's threshold is drawn from a triangular distribution over its
-published low/best/high estimate, the warming rate is drawn from a normal
-distribution around the post-1980 trend (with Newey-West standard errors,
-since annual temperature residuals are autocorrelated), and the two are
-combined 20,000 times per element.
+Each score measures how much of a tipping element's estimated temperature threshold has been reached:
 
-`2_temperature_forecast.ipynb` checks the load-bearing assumption in
-notebook 1: that a straight line through the post-1980 trend is a
-reasonable way to extrapolate crossing dates. It backtests a linear trend
-against a persistence baseline and a ridge regression with lagged ENSO,
-using an expanding window so each prediction only sees data available at
-that point in time. Result: ridge modestly beats the linear trend at 1-year
-and 10-year horizons, and the linear trend runs about 6 years low on a
-10-year forecast. That's small next to the decades-to-centuries spread in
-the Monte Carlo's threshold uncertainty, so it doesn't change the
-dashboard's headline numbers, but it's the honest caveat on where they come
-from.
+```text
+proximity score = current warming / threshold × 100
+```
 
-Known limitations (also documented in the notebook): the baseline
-conversion introduces a small offset, current warming is sensitive to the
-choice of averaging window, and using global mean temperature as a single
-control parameter for every tipping element is a simplification, some
-respond to regional or ocean-specific temperatures rather than the global
-mean.
+A score of 70 means current warming is 70% of the way to the threshold. It does not mean the element has a 70% probability of tipping.
+
+### Crossing probabilities
+
+The Monte Carlo analysis runs 20,000 simulations per tipping element. Each simulation:
+
+1. Samples a threshold from a triangular distribution using the published low, central, and high estimates.
+2. Samples a warming rate from a normal distribution around the post-1980 trend.
+3. Calculates whether the sampled threshold is crossed by 2050 or 2100.
+
+Newey-West standard errors are used to account for autocorrelation in annual temperature residuals.
+
+### Forecast validation
+
+`2_temperature_forecast.ipynb` tests whether a linear trend is a reasonable basis for estimating future crossing dates. It compares:
+
+* A linear temperature trend
+* A persistence baseline
+* Ridge regression with lagged ENSO data
+
+The models are evaluated with expanding-window backtesting, so each prediction uses only information available at that time.
+
+Ridge regression performs slightly better at 1-year and 10-year horizons. The linear model predicts about six years too early at the 10-year horizon. This difference is small relative to the wider uncertainty in published tipping thresholds, so it does not materially change the dashboard results.
+
+## Repository structure
+
+```text
+notebooks/
+  1_climate_tipping.ipynb
+    Data loading, exploratory analysis, proximity scores,
+    Monte Carlo simulation, and limitations
+
+  2_temperature_forecast.ipynb
+    Forecast model comparison and backtesting
+
+scripts/
+  update_data.py
+    Downloads current data, reruns the analysis, and writes
+    the dashboard JSON files
+
+docs/
+  index.html
+    Static dashboard
+
+  data/
+    Generated JSON files used by the dashboard
+
+.github/workflows/
+  update.yml
+    Runs the update script weekly and commits refreshed data
+```
+
+## Limitations
+
+* Converting between temperature baselines introduces a small offset.
+* Current warming estimates depend on the selected averaging period.
+* Global mean temperature is used as the control variable for every tipping element, although some systems respond more directly to regional or ocean temperatures.
+* Crossing probabilities represent threshold exceedance, not the probability or timing of the physical tipping process itself.
 
 ## Data sources
 
-- [NASA GISS Surface Temperature Analysis (GISTEMP v4)](https://data.giss.nasa.gov/gistemp/)
-- [NOAA Global Monitoring Laboratory, Mauna Loa CO2](https://gml.noaa.gov/ccgg/trends/)
-- [NSIDC Arctic sea ice extent, via Our World in Data](https://ourworldindata.org/grapher/monthly-sea-ice-extent-in-the-arctic)
-- Armstrong McKay, D.I. et al. (2022). Exceeding 1.5C global warming could
-  trigger multiple climate tipping points. *Science*, 377(6611), eabn7950.
-  [doi:10.1126/science.abn7950](https://doi.org/10.1126/science.abn7950)
+* [NASA GISS Surface Temperature Analysis, GISTEMP v4](https://data.giss.nasa.gov/gistemp/)
+* [NOAA Global Monitoring Laboratory, Mauna Loa CO2](https://gml.noaa.gov/ccgg/trends/)
+* [NSIDC Arctic sea ice extent via Our World in Data](https://ourworldindata.org/grapher/monthly-sea-ice-extent-in-the-arctic)
+* [Armstrong McKay et al. (2022), *Science*](https://doi.org/10.1126/science.abn7950)
 
-### If a scheduled run fails
+## Troubleshooting scheduled updates
 
-`update_data.py` raises an error rather than writing bad data if NASA,
-NOAA, or OWID change their file formats (it carries over the same assert
-checks the notebook uses). Check the Actions log for the specific
-assertion that failed.
+`update_data.py` validates incoming data before writing new dashboard files. If NASA, NOAA, or Our World in Data changes a file format, the script stops instead of publishing invalid results. Check the GitHub Actions log to identify the failed validation.

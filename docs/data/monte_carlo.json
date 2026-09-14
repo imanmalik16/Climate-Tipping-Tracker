@@ -3,8 +3,8 @@
     "name":"Boreal Permafrost (abrupt thaw)",
     "code":"PFAT",
     "category":"Regional impact",
-    "p_already":0.008,
-    "p_2050":0.519,
+    "p_already":0.009,
+    "p_2050":0.525,
     "p_2100":1.0,
     "median_year":2049
   },
@@ -13,7 +13,7 @@
     "code":"BARI",
     "category":"Regional impact",
     "p_already":0.0,
-    "p_2050":0.468,
+    "p_2050":0.495,
     "p_2100":1.0,
     "median_year":2050
   },
@@ -21,8 +21,8 @@
     "name":"Low-latitude Coral Reefs",
     "code":"REEF",
     "category":"Regional impact",
-    "p_already":0.01,
-    "p_2050":0.666,
+    "p_already":0.012,
+    "p_2050":0.672,
     "p_2100":1.0,
     "median_year":2045
   },
@@ -30,9 +30,9 @@
     "name":"Greenland Ice Sheet",
     "code":"GrIS",
     "category":"Global core",
-    "p_already":0.048,
-    "p_2050":0.402,
-    "p_2100":0.955,
+    "p_already":0.05,
+    "p_2050":0.405,
+    "p_2100":0.956,
     "median_year":2056
   },
   {
@@ -40,9 +40,9 @@
     "code":"WAIS",
     "category":"Global core",
     "p_already":0.006,
-    "p_2050":0.338,
+    "p_2050":0.342,
     "p_2100":0.949,
-    "median_year":2059
+    "median_year":2058
   },
   {
     "name":"Mountain Glaciers",
@@ -50,7 +50,7 @@
     "category":"Regional impact",
     "p_already":0.0,
     "p_2050":0.013,
-    "p_2100":0.901,
+    "p_2100":0.902,
     "median_year":2076
   },
   {
@@ -58,8 +58,8 @@
     "code":"LABC",
     "category":"Global core",
     "p_already":0.0,
-    "p_2050":0.132,
-    "p_2100":0.747,
+    "p_2050":0.134,
+    "p_2100":0.748,
     "median_year":2077
   },
   {
@@ -68,7 +68,7 @@
     "category":"Regional impact",
     "p_already":0.0,
     "p_2050":0.0,
-    "p_2100":0.352,
+    "p_2100":0.354,
     "median_year":2106
   },
   {
@@ -77,7 +77,7 @@
     "category":"Regional impact",
     "p_already":0.0,
     "p_2050":0.005,
-    "p_2100":0.163,
+    "p_2100":0.164,
     "median_year":2144
   },
   {
@@ -94,8 +94,8 @@
     "code":"TUND",
     "category":"Regional impact",
     "p_already":0.0,
-    "p_2050":0.0,
-    "p_2100":0.091,
+    "p_2050":0.001,
+    "p_2100":0.092,
     "median_year":2175
   },
   {

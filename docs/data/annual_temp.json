@@ -1,58 +1,58 @@
 [
   {
     "year":1880,
-    "anomaly_C":0.05,
+    "anomaly_C":0.052,
     "rolling_10yr":null
   },
   {
     "year":1881,
-    "anomaly_C":0.138,
+    "anomaly_C":0.137,
     "rolling_10yr":null
   },
   {
     "year":1882,
-    "anomaly_C":0.115,
+    "anomaly_C":0.113,
     "rolling_10yr":null
   },
   {
     "year":1883,
-    "anomaly_C":0.05,
+    "anomaly_C":0.049,
     "rolling_10yr":null
   },
   {
     "year":1884,
-    "anomaly_C":-0.055,
+    "anomaly_C":-0.058,
     "rolling_10yr":null
   },
   {
     "year":1885,
-    "anomaly_C":-0.11,
-    "rolling_10yr":0.013
+    "anomaly_C":-0.109,
+    "rolling_10yr":0.012
   },
   {
     "year":1886,
-    "anomaly_C":-0.09,
+    "anomaly_C":-0.089,
     "rolling_10yr":-0.006
   },
   {
     "year":1887,
     "anomaly_C":-0.137,
-    "rolling_10yr":-0.019
+    "rolling_10yr":-0.02
   },
   {
     "year":1888,
-    "anomaly_C":0.05,
+    "anomaly_C":0.048,
     "rolling_10yr":-0.036
   },
   {
     "year":1889,
-    "anomaly_C":0.116,
+    "anomaly_C":0.117,
     "rolling_10yr":-0.049
   },
   {
     "year":1890,
-    "anomaly_C":-0.132,
-    "rolling_10yr":-0.052
+    "anomaly_C":-0.13,
+    "rolling_10yr":-0.051
   },
   {
     "year":1891,
@@ -61,27 +61,27 @@
   },
   {
     "year":1892,
-    "anomaly_C":-0.049,
+    "anomaly_C":-0.048,
     "rolling_10yr":-0.021
   },
   {
     "year":1893,
-    "anomaly_C":-0.086,
-    "rolling_10yr":0.004
+    "anomaly_C":-0.087,
+    "rolling_10yr":0.005
   },
   {
     "year":1894,
-    "anomaly_C":-0.08,
-    "rolling_10yr":-0.006
+    "anomaly_C":-0.079,
+    "rolling_10yr":-0.005
   },
   {
     "year":1895,
-    "anomaly_C":0.0,
-    "rolling_10yr":-0.013
+    "anomaly_C":-0.002,
+    "rolling_10yr":-0.012
   },
   {
     "year":1896,
-    "anomaly_C":0.11,
+    "anomaly_C":0.113,
     "rolling_10yr":0.015
   },
   {
@@ -91,642 +91,642 @@
   },
   {
     "year":1898,
-    "anomaly_C":-0.052,
+    "anomaly_C":-0.05,
     "rolling_10yr":0.021
   },
   {
     "year":1899,
-    "anomaly_C":0.048,
+    "anomaly_C":0.047,
     "rolling_10yr":0.015
   },
   {
     "year":1900,
-    "anomaly_C":0.142,
+    "anomaly_C":0.14,
     "rolling_10yr":-0.002
   },
   {
     "year":1901,
-    "anomaly_C":0.072,
-    "rolling_10yr":-0.006
+    "anomaly_C":0.07,
+    "rolling_10yr":-0.005
   },
   {
     "year":1902,
-    "anomaly_C":-0.057,
-    "rolling_10yr":-0.017
+    "anomaly_C":-0.058,
+    "rolling_10yr":-0.016
   },
   {
     "year":1903,
     "anomaly_C":-0.146,
-    "rolling_10yr":-0.044
+    "rolling_10yr":-0.043
   },
   {
     "year":1904,
-    "anomaly_C":-0.252,
-    "rolling_10yr":-0.06
+    "anomaly_C":-0.248,
+    "rolling_10yr":-0.058
   },
   {
     "year":1905,
-    "anomaly_C":-0.04,
-    "rolling_10yr":-0.091
+    "anomaly_C":-0.034,
+    "rolling_10yr":-0.088
   },
   {
     "year":1906,
-    "anomaly_C":0.001,
-    "rolling_10yr":-0.126
+    "anomaly_C":0.007,
+    "rolling_10yr":-0.123
   },
   {
     "year":1907,
-    "anomaly_C":-0.16,
-    "rolling_10yr":-0.156
+    "anomaly_C":-0.156,
+    "rolling_10yr":-0.152
   },
   {
     "year":1908,
-    "anomaly_C":-0.205,
-    "rolling_10yr":-0.165
+    "anomaly_C":-0.198,
+    "rolling_10yr":-0.16
   },
   {
     "year":1909,
-    "anomaly_C":-0.264,
-    "rolling_10yr":-0.163
+    "anomaly_C":-0.258,
+    "rolling_10yr":-0.157
   },
   {
     "year":1910,
-    "anomaly_C":-0.214,
-    "rolling_10yr":-0.131
+    "anomaly_C":-0.21,
+    "rolling_10yr":-0.126
   },
   {
     "year":1911,
-    "anomaly_C":-0.221,
-    "rolling_10yr":-0.119
+    "anomaly_C":-0.218,
+    "rolling_10yr":-0.114
   },
   {
     "year":1912,
-    "anomaly_C":-0.145,
-    "rolling_10yr":-0.133
+    "anomaly_C":-0.141,
+    "rolling_10yr":-0.128
   },
   {
     "year":1913,
-    "anomaly_C":-0.128,
-    "rolling_10yr":-0.14
+    "anomaly_C":-0.118,
+    "rolling_10yr":-0.135
   },
   {
     "year":1914,
-    "anomaly_C":0.063,
-    "rolling_10yr":-0.127
+    "anomaly_C":0.07,
+    "rolling_10yr":-0.123
   },
   {
     "year":1915,
-    "anomaly_C":0.081,
-    "rolling_10yr":-0.106
+    "anomaly_C":0.086,
+    "rolling_10yr":-0.102
   },
   {
     "year":1916,
     "anomaly_C":-0.135,
-    "rolling_10yr":-0.089
+    "rolling_10yr":-0.085
   },
   {
     "year":1917,
-    "anomaly_C":-0.235,
-    "rolling_10yr":-0.063
+    "anomaly_C":-0.233,
+    "rolling_10yr":-0.06
   },
   {
     "year":1918,
-    "anomaly_C":-0.073,
-    "rolling_10yr":-0.054
+    "anomaly_C":-0.072,
+    "rolling_10yr":-0.051
   },
   {
     "year":1919,
-    "anomaly_C":-0.049,
-    "rolling_10yr":-0.045
+    "anomaly_C":-0.05,
+    "rolling_10yr":-0.043
   },
   {
     "year":1920,
-    "anomaly_C":-0.049,
+    "anomaly_C":-0.044,
     "rolling_10yr":-0.055
   },
   {
     "year":1921,
-    "anomaly_C":0.038,
-    "rolling_10yr":-0.062
+    "anomaly_C":0.041,
+    "rolling_10yr":-0.063
   },
   {
     "year":1922,
-    "anomaly_C":-0.055,
+    "anomaly_C":-0.058,
     "rolling_10yr":-0.037
   },
   {
     "year":1923,
-    "anomaly_C":-0.036,
-    "rolling_10yr":-0.012
+    "anomaly_C":-0.038,
+    "rolling_10yr":-0.013
   },
   {
     "year":1924,
-    "anomaly_C":-0.04,
-    "rolling_10yr":-0.002
+    "anomaly_C":-0.044,
+    "rolling_10yr":-0.003
   },
   {
     "year":1925,
-    "anomaly_C":0.008,
-    "rolling_10yr":-0.011
+    "anomaly_C":0.006,
+    "rolling_10yr":-0.012
   },
   {
     "year":1926,
-    "anomaly_C":0.121,
-    "rolling_10yr":0.001
+    "anomaly_C":0.12,
+    "rolling_10yr":0.0
   },
   {
     "year":1927,
     "anomaly_C":0.01,
-    "rolling_10yr":0.011
+    "rolling_10yr":0.009
   },
   {
     "year":1928,
-    "anomaly_C":0.028,
-    "rolling_10yr":0.023
+    "anomaly_C":0.026,
+    "rolling_10yr":0.022
   },
   {
     "year":1929,
-    "anomaly_C":-0.133,
-    "rolling_10yr":0.021
+    "anomaly_C":-0.135,
+    "rolling_10yr":0.02
   },
   {
     "year":1930,
-    "anomaly_C":0.07,
-    "rolling_10yr":0.035
+    "anomaly_C":0.071,
+    "rolling_10yr":0.034
   },
   {
     "year":1931,
     "anomaly_C":0.135,
-    "rolling_10yr":0.037
+    "rolling_10yr":0.036
   },
   {
     "year":1932,
-    "anomaly_C":0.068,
-    "rolling_10yr":0.033
+    "anomaly_C":0.067,
+    "rolling_10yr":0.031
   },
   {
     "year":1933,
-    "anomaly_C":-0.059,
-    "rolling_10yr":0.051
+    "anomaly_C":-0.06,
+    "rolling_10yr":0.049
   },
   {
     "year":1934,
-    "anomaly_C":0.101,
-    "rolling_10yr":0.071
+    "anomaly_C":0.096,
+    "rolling_10yr":0.069
   },
   {
     "year":1935,
-    "anomaly_C":0.028,
-    "rolling_10yr":0.105
+    "anomaly_C":0.025,
+    "rolling_10yr":0.103
   },
   {
     "year":1936,
-    "anomaly_C":0.078,
-    "rolling_10yr":0.133
+    "anomaly_C":0.075,
+    "rolling_10yr":0.13
   },
   {
     "year":1937,
-    "anomaly_C":0.196,
-    "rolling_10yr":0.16
+    "anomaly_C":0.194,
+    "rolling_10yr":0.157
   },
   {
     "year":1938,
-    "anomaly_C":0.224,
-    "rolling_10yr":0.183
+    "anomaly_C":0.222,
+    "rolling_10yr":0.179
   },
   {
     "year":1939,
-    "anomaly_C":0.205,
-    "rolling_10yr":0.22
+    "anomaly_C":0.204,
+    "rolling_10yr":0.217
   },
   {
     "year":1940,
-    "anomaly_C":0.351,
-    "rolling_10yr":0.253
+    "anomaly_C":0.346,
+    "rolling_10yr":0.25
   },
   {
     "year":1941,
-    "anomaly_C":0.41,
-    "rolling_10yr":0.283
+    "anomaly_C":0.405,
+    "rolling_10yr":0.279
   },
   {
     "year":1942,
-    "anomaly_C":0.291,
-    "rolling_10yr":0.291
-  },
-  {
-    "year":1943,
-    "anomaly_C":0.315,
-    "rolling_10yr":0.291
-  },
-  {
-    "year":1944,
-    "anomaly_C":0.431,
-    "rolling_10yr":0.281
-  },
-  {
-    "year":1945,
-    "anomaly_C":0.325,
-    "rolling_10yr":0.272
-  },
-  {
-    "year":1946,
-    "anomaly_C":0.157,
-    "rolling_10yr":0.243
-  },
-  {
-    "year":1947,
-    "anomaly_C":0.201,
-    "rolling_10yr":0.218
-  },
-  {
-    "year":1948,
-    "anomaly_C":0.121,
-    "rolling_10yr":0.212
-  },
-  {
-    "year":1949,
-    "anomaly_C":0.119,
-    "rolling_10yr":0.212
-  },
-  {
-    "year":1950,
-    "anomaly_C":0.055,
-    "rolling_10yr":0.178
-  },
-  {
-    "year":1951,
-    "anomaly_C":0.16,
-    "rolling_10yr":0.155
-  },
-  {
-    "year":1952,
-    "anomaly_C":0.24,
-    "rolling_10yr":0.143
-  },
-  {
-    "year":1953,
-    "anomaly_C":0.31,
-    "rolling_10yr":0.151
-  },
-  {
-    "year":1954,
-    "anomaly_C":0.097,
-    "rolling_10yr":0.168
-  },
-  {
-    "year":1955,
-    "anomaly_C":0.09,
-    "rolling_10yr":0.182
-  },
-  {
-    "year":1956,
-    "anomaly_C":0.04,
-    "rolling_10yr":0.197
-  },
-  {
-    "year":1957,
-    "anomaly_C":0.277,
-    "rolling_10yr":0.209
-  },
-  {
-    "year":1958,
-    "anomaly_C":0.289,
-    "rolling_10yr":0.211
-  },
-  {
-    "year":1959,
-    "anomaly_C":0.26,
-    "rolling_10yr":0.209
-  },
-  {
-    "year":1960,
-    "anomaly_C":0.205,
-    "rolling_10yr":0.202
-  },
-  {
-    "year":1961,
-    "anomaly_C":0.286,
-    "rolling_10yr":0.206
-  },
-  {
-    "year":1962,
-    "anomaly_C":0.26,
-    "rolling_10yr":0.219
-  },
-  {
-    "year":1963,
-    "anomaly_C":0.284,
-    "rolling_10yr":0.212
-  },
-  {
-    "year":1964,
-    "anomaly_C":0.03,
-    "rolling_10yr":0.197
-  },
-  {
-    "year":1965,
-    "anomaly_C":0.123,
-    "rolling_10yr":0.2
-  },
-  {
-    "year":1966,
-    "anomaly_C":0.172,
-    "rolling_10yr":0.205
-  },
-  {
-    "year":1967,
-    "anomaly_C":0.205,
-    "rolling_10yr":0.191
-  },
-  {
-    "year":1968,
-    "anomaly_C":0.147,
-    "rolling_10yr":0.189
-  },
-  {
-    "year":1969,
-    "anomaly_C":0.282,
-    "rolling_10yr":0.2
-  },
-  {
-    "year":1970,
-    "anomaly_C":0.257,
-    "rolling_10yr":0.212
-  },
-  {
-    "year":1971,
-    "anomaly_C":0.15,
-    "rolling_10yr":0.222
-  },
-  {
-    "year":1972,
-    "anomaly_C":0.239,
-    "rolling_10yr":0.218
-  },
-  {
-    "year":1973,
-    "anomaly_C":0.39,
-    "rolling_10yr":0.238
-  },
-  {
-    "year":1974,
-    "anomaly_C":0.158,
-    "rolling_10yr":0.253
-  },
-  {
-    "year":1975,
-    "anomaly_C":0.216,
-    "rolling_10yr":0.264
-  },
-  {
-    "year":1976,
-    "anomaly_C":0.132,
+    "anomaly_C":0.288,
     "rolling_10yr":0.287
   },
   {
+    "year":1943,
+    "anomaly_C":0.311,
+    "rolling_10yr":0.287
+  },
+  {
+    "year":1944,
+    "anomaly_C":0.427,
+    "rolling_10yr":0.277
+  },
+  {
+    "year":1945,
+    "anomaly_C":0.319,
+    "rolling_10yr":0.268
+  },
+  {
+    "year":1946,
+    "anomaly_C":0.154,
+    "rolling_10yr":0.238
+  },
+  {
+    "year":1947,
+    "anomaly_C":0.197,
+    "rolling_10yr":0.213
+  },
+  {
+    "year":1948,
+    "anomaly_C":0.117,
+    "rolling_10yr":0.208
+  },
+  {
+    "year":1949,
+    "anomaly_C":0.114,
+    "rolling_10yr":0.207
+  },
+  {
+    "year":1950,
+    "anomaly_C":0.05,
+    "rolling_10yr":0.174
+  },
+  {
+    "year":1951,
+    "anomaly_C":0.154,
+    "rolling_10yr":0.15
+  },
+  {
+    "year":1952,
+    "anomaly_C":0.235,
+    "rolling_10yr":0.138
+  },
+  {
+    "year":1953,
+    "anomaly_C":0.306,
+    "rolling_10yr":0.146
+  },
+  {
+    "year":1954,
+    "anomaly_C":0.091,
+    "rolling_10yr":0.163
+  },
+  {
+    "year":1955,
+    "anomaly_C":0.085,
+    "rolling_10yr":0.177
+  },
+  {
+    "year":1956,
+    "anomaly_C":0.035,
+    "rolling_10yr":0.192
+  },
+  {
+    "year":1957,
+    "anomaly_C":0.272,
+    "rolling_10yr":0.205
+  },
+  {
+    "year":1958,
+    "anomaly_C":0.285,
+    "rolling_10yr":0.207
+  },
+  {
+    "year":1959,
+    "anomaly_C":0.255,
+    "rolling_10yr":0.204
+  },
+  {
+    "year":1960,
+    "anomaly_C":0.2,
+    "rolling_10yr":0.197
+  },
+  {
+    "year":1961,
+    "anomaly_C":0.281,
+    "rolling_10yr":0.2
+  },
+  {
+    "year":1962,
+    "anomaly_C":0.255,
+    "rolling_10yr":0.214
+  },
+  {
+    "year":1963,
+    "anomaly_C":0.278,
+    "rolling_10yr":0.206
+  },
+  {
+    "year":1964,
+    "anomaly_C":0.025,
+    "rolling_10yr":0.192
+  },
+  {
+    "year":1965,
+    "anomaly_C":0.116,
+    "rolling_10yr":0.194
+  },
+  {
+    "year":1966,
+    "anomaly_C":0.168,
+    "rolling_10yr":0.199
+  },
+  {
+    "year":1967,
+    "anomaly_C":0.201,
+    "rolling_10yr":0.186
+  },
+  {
+    "year":1968,
+    "anomaly_C":0.141,
+    "rolling_10yr":0.184
+  },
+  {
+    "year":1969,
+    "anomaly_C":0.277,
+    "rolling_10yr":0.194
+  },
+  {
+    "year":1970,
+    "anomaly_C":0.252,
+    "rolling_10yr":0.207
+  },
+  {
+    "year":1971,
+    "anomaly_C":0.145,
+    "rolling_10yr":0.217
+  },
+  {
+    "year":1972,
+    "anomaly_C":0.234,
+    "rolling_10yr":0.213
+  },
+  {
+    "year":1973,
+    "anomaly_C":0.385,
+    "rolling_10yr":0.233
+  },
+  {
+    "year":1974,
+    "anomaly_C":0.153,
+    "rolling_10yr":0.248
+  },
+  {
+    "year":1975,
+    "anomaly_C":0.212,
+    "rolling_10yr":0.259
+  },
+  {
+    "year":1976,
+    "anomaly_C":0.128,
+    "rolling_10yr":0.282
+  },
+  {
     "year":1977,
-    "anomaly_C":0.408,
-    "rolling_10yr":0.327
+    "anomaly_C":0.402,
+    "rolling_10yr":0.322
   },
   {
     "year":1978,
-    "anomaly_C":0.296,
-    "rolling_10yr":0.34
+    "anomaly_C":0.291,
+    "rolling_10yr":0.335
   },
   {
     "year":1979,
-    "anomaly_C":0.394,
-    "rolling_10yr":0.356
+    "anomaly_C":0.389,
+    "rolling_10yr":0.351
   },
   {
     "year":1980,
-    "anomaly_C":0.485,
-    "rolling_10yr":0.378
+    "anomaly_C":0.481,
+    "rolling_10yr":0.373
   },
   {
     "year":1981,
-    "anomaly_C":0.553,
-    "rolling_10yr":0.391
+    "anomaly_C":0.547,
+    "rolling_10yr":0.386
   },
   {
     "year":1982,
-    "anomaly_C":0.369,
-    "rolling_10yr":0.419
+    "anomaly_C":0.364,
+    "rolling_10yr":0.414
   },
   {
     "year":1983,
-    "anomaly_C":0.545,
-    "rolling_10yr":0.434
+    "anomaly_C":0.54,
+    "rolling_10yr":0.428
   },
   {
     "year":1984,
-    "anomaly_C":0.385,
-    "rolling_10yr":0.466
+    "anomaly_C":0.38,
+    "rolling_10yr":0.461
   },
   {
     "year":1985,
-    "anomaly_C":0.348,
-    "rolling_10yr":0.477
+    "anomaly_C":0.343,
+    "rolling_10yr":0.471
   },
   {
     "year":1986,
-    "anomaly_C":0.41,
-    "rolling_10yr":0.496
+    "anomaly_C":0.405,
+    "rolling_10yr":0.491
   },
   {
     "year":1987,
-    "anomaly_C":0.551,
-    "rolling_10yr":0.505
+    "anomaly_C":0.546,
+    "rolling_10yr":0.499
   },
   {
     "year":1988,
-    "anomaly_C":0.62,
-    "rolling_10yr":0.513
+    "anomaly_C":0.613,
+    "rolling_10yr":0.507
   },
   {
     "year":1989,
-    "anomaly_C":0.504,
-    "rolling_10yr":0.505
+    "anomaly_C":0.497,
+    "rolling_10yr":0.499
   },
   {
     "year":1990,
-    "anomaly_C":0.679,
-    "rolling_10yr":0.521
+    "anomaly_C":0.673,
+    "rolling_10yr":0.515
   },
   {
     "year":1991,
-    "anomaly_C":0.637,
-    "rolling_10yr":0.554
+    "anomaly_C":0.63,
+    "rolling_10yr":0.547
   },
   {
     "year":1992,
-    "anomaly_C":0.454,
-    "rolling_10yr":0.569
+    "anomaly_C":0.447,
+    "rolling_10yr":0.563
   },
   {
     "year":1993,
-    "anomaly_C":0.463,
-    "rolling_10yr":0.584
+    "anomaly_C":0.455,
+    "rolling_10yr":0.577
   },
   {
     "year":1994,
-    "anomaly_C":0.545,
-    "rolling_10yr":0.606
+    "anomaly_C":0.538,
+    "rolling_10yr":0.599
   },
   {
     "year":1995,
-    "anomaly_C":0.677,
-    "rolling_10yr":0.617
+    "anomaly_C":0.67,
+    "rolling_10yr":0.61
   },
   {
     "year":1996,
-    "anomaly_C":0.564,
-    "rolling_10yr":0.611
+    "anomaly_C":0.558,
+    "rolling_10yr":0.605
   },
   {
     "year":1997,
-    "anomaly_C":0.697,
-    "rolling_10yr":0.624
+    "anomaly_C":0.69,
+    "rolling_10yr":0.617
   },
   {
     "year":1998,
-    "anomaly_C":0.839,
-    "rolling_10yr":0.664
+    "anomaly_C":0.833,
+    "rolling_10yr":0.658
   },
   {
     "year":1999,
-    "anomaly_C":0.612,
-    "rolling_10yr":0.702
+    "anomaly_C":0.607,
+    "rolling_10yr":0.696
   },
   {
     "year":2000,
-    "anomaly_C":0.623,
-    "rolling_10yr":0.724
+    "anomaly_C":0.618,
+    "rolling_10yr":0.718
   },
   {
     "year":2001,
-    "anomaly_C":0.763,
-    "rolling_10yr":0.747
+    "anomaly_C":0.758,
+    "rolling_10yr":0.742
   },
   {
     "year":2002,
-    "anomaly_C":0.857,
-    "rolling_10yr":0.778
+    "anomaly_C":0.853,
+    "rolling_10yr":0.773
   },
   {
     "year":2003,
-    "anomaly_C":0.846,
-    "rolling_10yr":0.798
+    "anomaly_C":0.84,
+    "rolling_10yr":0.793
   },
   {
     "year":2004,
-    "anomaly_C":0.764,
-    "rolling_10yr":0.791
+    "anomaly_C":0.759,
+    "rolling_10yr":0.786
   },
   {
     "year":2005,
-    "anomaly_C":0.909,
-    "rolling_10yr":0.818
+    "anomaly_C":0.903,
+    "rolling_10yr":0.814
   },
   {
     "year":2006,
-    "anomaly_C":0.87,
-    "rolling_10yr":0.852
+    "anomaly_C":0.867,
+    "rolling_10yr":0.846
   },
   {
     "year":2007,
-    "anomaly_C":0.894,
-    "rolling_10yr":0.859
+    "anomaly_C":0.89,
+    "rolling_10yr":0.854
   },
   {
     "year":2008,
-    "anomaly_C":0.773,
-    "rolling_10yr":0.861
+    "anomaly_C":0.767,
+    "rolling_10yr":0.856
   },
   {
     "year":2009,
-    "anomaly_C":0.885,
-    "rolling_10yr":0.867
+    "anomaly_C":0.881,
+    "rolling_10yr":0.861
   },
   {
     "year":2010,
-    "anomaly_C":0.954,
-    "rolling_10yr":0.888
+    "anomaly_C":0.947,
+    "rolling_10yr":0.883
   },
   {
     "year":2011,
-    "anomaly_C":0.837,
-    "rolling_10yr":0.91
+    "anomaly_C":0.832,
+    "rolling_10yr":0.904
   },
   {
     "year":2012,
-    "anomaly_C":0.876,
-    "rolling_10yr":0.947
+    "anomaly_C":0.87,
+    "rolling_10yr":0.941
   },
   {
     "year":2013,
-    "anomaly_C":0.906,
-    "rolling_10yr":0.973
+    "anomaly_C":0.899,
+    "rolling_10yr":0.966
   },
   {
     "year":2014,
-    "anomaly_C":0.979,
-    "rolling_10yr":1.003
+    "anomaly_C":0.971,
+    "rolling_10yr":0.996
   },
   {
     "year":2015,
-    "anomaly_C":1.128,
-    "rolling_10yr":1.036
+    "anomaly_C":1.12,
+    "rolling_10yr":1.029
   },
   {
     "year":2016,
-    "anomaly_C":1.242,
-    "rolling_10yr":1.064
+    "anomaly_C":1.235,
+    "rolling_10yr":1.057
   },
   {
     "year":2017,
-    "anomaly_C":1.145,
-    "rolling_10yr":1.088
+    "anomaly_C":1.137,
+    "rolling_10yr":1.081
   },
   {
     "year":2018,
-    "anomaly_C":1.08,
-    "rolling_10yr":1.113
+    "anomaly_C":1.073,
+    "rolling_10yr":1.105
   },
   {
     "year":2019,
-    "anomaly_C":1.21,
-    "rolling_10yr":1.162
+    "anomaly_C":1.202,
+    "rolling_10yr":1.155
   },
   {
     "year":2020,
-    "anomaly_C":1.237,
-    "rolling_10yr":1.216
+    "anomaly_C":1.23,
+    "rolling_10yr":1.208
   },
   {
     "year":2021,
-    "anomaly_C":1.079,
-    "rolling_10yr":1.246
+    "anomaly_C":1.072,
+    "rolling_10yr":1.237
   },
   {
     "year":2022,
-    "anomaly_C":1.122,
+    "anomaly_C":1.115,
     "rolling_10yr":null
   },
   {
     "year":2023,
-    "anomaly_C":1.402,
+    "anomaly_C":1.392,
     "rolling_10yr":null
   },
   {
     "year":2024,
-    "anomaly_C":1.515,
+    "anomaly_C":1.506,
     "rolling_10yr":null
   },
   {
     "year":2025,
-    "anomaly_C":1.423,
+    "anomaly_C":1.41,
     "rolling_10yr":null
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12T20:43:22.529435+00:00",
+  "generated": "2026-10-19T18:08:15.536995+00:00",
   "current_year": 2025,
   "window_years": 20,
   "current_temp": 1.071,
@@ -10,8 +10,8 @@
   "current_co2": 426.1,
   "co2_rate_per_year": 2.5,
   "co2_temp_corr": 0.96,
-  "ice_rate_per_decade": -0.777,
-  "ice_free_year_extrapolated": 2065,
+  "ice_rate_per_decade": -0.756,
+  "ice_free_year_extrapolated": 2067,
   "n_total": 16,
   "n_crossed": 0,
   "n_near": 4,

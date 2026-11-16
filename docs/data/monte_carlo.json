@@ -4,7 +4,7 @@
     "code":"PFAT",
     "category":"Regional impact",
     "p_already":0.007,
-    "p_2050":0.513,
+    "p_2050":0.514,
     "p_2100":1.0,
     "median_year":2050
   },
@@ -13,7 +13,7 @@
     "code":"BARI",
     "category":"Regional impact",
     "p_already":0.0,
-    "p_2050":0.433,
+    "p_2050":0.44,
     "p_2100":1.0,
     "median_year":2050
   },
@@ -21,8 +21,8 @@
     "name":"Low-latitude Coral Reefs",
     "code":"REEF",
     "category":"Regional impact",
-    "p_already":0.009,
-    "p_2050":0.658,
+    "p_already":0.01,
+    "p_2050":0.659,
     "p_2100":1.0,
     "median_year":2046
   },
@@ -30,8 +30,8 @@
     "name":"Greenland Ice Sheet",
     "code":"GrIS",
     "category":"Global core",
-    "p_already":0.047,
-    "p_2050":0.398,
+    "p_already":0.048,
+    "p_2050":0.399,
     "p_2100":0.953,
     "median_year":2056
   },
@@ -39,8 +39,8 @@
     "name":"W. Antarctic Ice Sheet",
     "code":"WAIS",
     "category":"Global core",
-    "p_already":0.005,
-    "p_2050":0.333,
+    "p_already":0.006,
+    "p_2050":0.334,
     "p_2100":0.946,
     "median_year":2059
   },
@@ -50,7 +50,7 @@
     "category":"Regional impact",
     "p_already":0.0,
     "p_2050":0.012,
-    "p_2100":0.895,
+    "p_2100":0.897,
     "median_year":2076
   },
   {
@@ -59,8 +59,8 @@
     "category":"Global core",
     "p_already":0.0,
     "p_2050":0.13,
-    "p_2100":0.742,
-    "median_year":2078
+    "p_2100":0.743,
+    "median_year":2077
   },
   {
     "name":"Sahel & W. African Monsoon",
@@ -68,7 +68,7 @@
     "category":"Regional impact",
     "p_already":0.0,
     "p_2050":0.0,
-    "p_2100":0.342,
+    "p_2100":0.344,
     "median_year":2107
   },
   {
@@ -78,7 +78,7 @@
     "p_already":0.0,
     "p_2050":0.004,
     "p_2100":0.161,
-    "median_year":2145
+    "median_year":2144
   },
   {
     "name":"E. Antarctic Subglacial Basins",
@@ -86,7 +86,7 @@
     "category":"Global core",
     "p_already":0.0,
     "p_2050":0.0,
-    "p_2100":0.102,
+    "p_2100":0.103,
     "median_year":2144
   },
   {
